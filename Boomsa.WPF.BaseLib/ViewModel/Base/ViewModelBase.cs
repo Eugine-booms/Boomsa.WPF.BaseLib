@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
+﻿
+using System;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace Boomsa.WPF.BaseLib.ViewModel.Base
 {
-    public abstract class ViewModelBase : INotifyPropertyChanged
+    [MarkupExtensionReturnType(typeof(ViewModelBase))]
+    public abstract class ViewModelBase : MarkupExtension, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -24,5 +22,6 @@ namespace Boomsa.WPF.BaseLib.ViewModel.Base
             property = value;
             return true;
         }
+        public override object ProvideValue(IServiceProvider serviceProvider) => this;
     }
 }
