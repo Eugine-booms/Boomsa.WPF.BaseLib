@@ -1,6 +1,6 @@
 ﻿namespace Boomsa.WPF.BaseLib.Services.Interfaces
 {
-    interface IUserDialog
+    public interface IUserDialog
     {
         bool ConfirmInformation_YesNo(string information, string title);
         void Error_OK(string title, string message);

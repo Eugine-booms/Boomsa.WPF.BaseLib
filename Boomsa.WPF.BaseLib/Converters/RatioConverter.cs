@@ -11,22 +11,22 @@ namespace Boomsa.WPF.BaseLib.Converters
     /// выполняет преобразование вида f(x)=K*x;
     /// </summary>
     [ValueConversion(typeof(double), typeof(double))]
-    [MarkupExtensionReturnType(typeof(Ratio))]
-    internal class Ratio : Converter
+    [MarkupExtensionReturnType(typeof(RatioConverter))]
+    internal class RatioConverter : Converter
     {
-        public Ratio(double k) => K = k;
+        public RatioConverter(double k) => K = k;
 
-        public Ratio() { }
+        public RatioConverter() { }
         [ConstructorArgument("K")]
-        public double K { get; set; } = 1;
-        override public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public double K { get; set; } = 0.5;
+        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is null) return null;
             var x = System.Convert.ToDouble(value, culture);
             return K * x;
         }
 
-        override public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is null) return null;
             if (string.IsNullOrEmpty(value as string)) return 0;

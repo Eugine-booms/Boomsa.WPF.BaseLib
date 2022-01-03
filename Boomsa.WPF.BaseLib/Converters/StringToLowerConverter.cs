@@ -12,7 +12,7 @@ namespace Boomsa.WPF.BaseLib.Converters
     /// </summary>
     [ValueConversion(typeof(string), typeof(string))]
     [MarkupExtensionReturnType(typeof(StringToLowerConverter))]
-    class StringToLowerConverter : Converter
+    internal class StringToLowerConverter : Converter
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

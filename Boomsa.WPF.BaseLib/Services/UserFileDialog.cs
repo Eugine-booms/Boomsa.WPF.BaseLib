@@ -2,15 +2,12 @@
 
 using Microsoft.Win32;
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Boomsa.WPF.BaseLib.Services
 {
-    class UserFileDialog : IUserFileDialog
+    internal class UserFileDialog : IUserFileDialog
     {
         public bool OpenFiles(string title, out IEnumerable<string> selectdFiles, string filter = "Все файлы (*.*)|*.*")
         {

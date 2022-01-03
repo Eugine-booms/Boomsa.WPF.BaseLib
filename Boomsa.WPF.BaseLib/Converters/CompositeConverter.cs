@@ -11,7 +11,7 @@ namespace Boomsa.WPF.BaseLib.Converters
     ///   Конвертер  объединяющий 2 конвертера
     /// </summary>
     [MarkupExtensionReturnType(typeof(CompositeConverter))]
-    
+
     internal class CompositeConverter : Converter
     {
         [ConstructorArgument("First")]

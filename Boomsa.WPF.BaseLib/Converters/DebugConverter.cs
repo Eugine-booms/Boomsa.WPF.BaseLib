@@ -10,7 +10,7 @@ namespace Boomsa.WPF.BaseLib.Converters
 {
     [ValueConversion(typeof(object), typeof(object))]
     [MarkupExtensionReturnType(typeof(LinearConverter))]
-    class DebugConverter : Converter
+    internal class DebugConverter : Converter
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

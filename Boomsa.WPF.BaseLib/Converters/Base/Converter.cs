@@ -8,7 +8,7 @@ namespace Boomsa.WPF.BaseLib.Converters.Base
     public abstract class Converter : MarkupExtension, IValueConverter
     {
         public abstract object Convert(object value, Type targetType, object parameter, CultureInfo culture);
-       
+
 
         public virtual object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {

@@ -1,15 +1,10 @@
 ﻿using Boomsa.WPF.BaseLib.Services.Interfaces;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Boomsa.WPF.BaseLib.Services
 {
-    class UserDialog : IUserDialog
+    public class UserDialog : IUserDialog
     {
         public bool ConfirmInformation_YesNo(string information, string title)
         {

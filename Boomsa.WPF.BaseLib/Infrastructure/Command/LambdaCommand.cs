@@ -1,18 +1,14 @@
 ﻿using Boomsa.WPF.BaseLib.Infrastructure.Command.Base;
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Markup;
 
 namespace Boomsa.WPF.BaseLib.Infrastructure.Command
 {
     [MarkupExtensionReturnType(typeof(LambdaCommand))]
-    class LambdaCommand : BaseCommand
+    public class LambdaCommand : BaseCommand
     {
-        private readonly Action <object> execute;
+        private readonly Action<object> execute;
         private readonly Func<object, bool> canExecute;
         /// <summary>
         ///  Команда с делегатами
@@ -32,7 +28,7 @@ namespace Boomsa.WPF.BaseLib.Infrastructure.Command
         public LambdaCommand(Action execute, Func<bool> canExecute = null) :
             this(
                 execute: p => execute(),
-                canExecute: canExecute is null ? (Func<object, bool>)null : p => canExecute())
+                canExecute: canExecute is null ? null : p => canExecute())
         { }
 
         public override void Execute(object parameter)

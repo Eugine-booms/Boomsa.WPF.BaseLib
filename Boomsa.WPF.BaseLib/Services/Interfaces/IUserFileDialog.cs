@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Boomsa.WPF.BaseLib.Services.Interfaces
 {
-    interface IUserFileDialog
+    internal interface IUserFileDialog
     {
         bool OpenFile(string title, out string selectdFile, string filter = "Все файлы (*.*)|*.*");
         bool OpenFiles(string title, out IEnumerable<string> selectdFiles, string filter = "Все файлы (*.*)|*.*");

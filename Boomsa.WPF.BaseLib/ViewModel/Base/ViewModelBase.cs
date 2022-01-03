@@ -11,7 +11,7 @@ namespace Boomsa.WPF.BaseLib.ViewModel.Base
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName=null)
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
@@ -20,6 +20,7 @@ namespace Boomsa.WPF.BaseLib.ViewModel.Base
         {
             if (Equals(property, value)) return false;
             property = value;
+            OnPropertyChanged(propertyName);
             return true;
         }
         public override object ProvideValue(IServiceProvider serviceProvider) => this;

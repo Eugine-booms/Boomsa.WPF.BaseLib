@@ -1,15 +1,11 @@
 ﻿using Boomsa.WPF.BaseLib.Infrastructure.Command.Base;
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Boomsa.WPF.BaseLib.Infrastructure.Command
 {
-    class CloseAppCommand : BaseCommand
+    internal class CloseAppCommand : BaseCommand
     {
         public override void Execute(object parameter)
         {
@@ -17,6 +13,6 @@ namespace Boomsa.WPF.BaseLib.Infrastructure.Command
         }
 
         public override object ProvideValue(IServiceProvider serviceProvider) => this;
-       
+
     }
 }
